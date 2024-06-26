@@ -1,0 +1,111 @@
+body {
+  background-image: url('/img/background.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  font-family: "Merriweather Sans", sans-serif;
+
+  font-weight: 800;
+  font-style: normal;
+
+}
+
+.nav-link {
+
+  color: black;
+
+
+}
+
+.nav-body {
+  color: black;
+}
+
+
+.navbar-brand {
+  color: black;
+}
+
+
+/* FORMS */
+.c-form {
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+
+.div-form {
+  border-radius: 12px;
+}
+
+/* FORMS STYLES */
+
+.form-title{
+  font-size: 30px;
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 300;
+  font-style: normal;
+}
+
+.form-back,.form-button,.form-input-name,.form-link {
+  font-size: 20px;
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 300;
+  font-style: normal;
+}
+.form-label-title{
+  font-size: 20px;
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
+}
+.form-button-index{
+  font-size: 15px;
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
+}
+
+.error-message{
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
+}
+
+.form-select{
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
+}
+
+
+/* REVIEW STYLE*/
+.review-card{
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+.band_name_band_title,.review-creation{
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 800;
+  font-style: normal;
+}
+
+
+@media(max-width:991px) {
+  .sidebar {
+    background-color: rgb(255, 255, 255, 0.15);
+    backdrop-filter: blur(18px);
+  }
+}
+
+@media(max-width:480px) {}
