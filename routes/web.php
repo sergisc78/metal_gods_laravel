@@ -73,9 +73,10 @@ Route::get('/admin/users/{id}', [AdminController::class, 'deleteUser']);
 /*REVIEWS*/
 Route::get('/user/reviews/add-review',[UserController::class,'addReviewForm']); 
 Route::post('/user/addReview',[UserController::class,'addReview']);
-Route::get('/user/reviews',[UserController::class,'getReviews']);
+Route::get('/user/reviews/',[UserController::class,'getReviews']);
 Route::get('/user/reviews/view-review/{id}/{band}/{album}',[UserController::class,'getReviewById']);
 Route::get('/user/reviews/your-reviews',[UserController::class,'getYourReviews']);
+Route::get('/user/reviews/view-edit-your-reviews/',[UserController::class,'getYourReviewById']);
 
 /*BANDS*/
 Route::get('/user/bands/add-band',[UserController::class,'addBandForm']);

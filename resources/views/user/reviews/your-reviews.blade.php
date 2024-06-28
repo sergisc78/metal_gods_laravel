@@ -2,8 +2,8 @@
 
 <div class="container" id="allbands">
 
-  <a href="{{url('user/reviews/add-review')}}" class="btn  btn-primary mt-3 mb-4 form-button">Add review</a>
-  <a href="{{url('user/reviews/your-reviews')}}" class="btn  btn-primary mt-3 mb-4 form-button">Your reviews</a>
+  <a href="{{url('user/reviews')}}" class="btn  btn-primary mt-3 mb-4 form-button">Reviews</a>
+ 
   <a href="{{url('user/dashboard')}}" class="btn  btn-primary mt-3 mb-4 form-button">Dashboard</a>
   
   
@@ -12,34 +12,31 @@
     <div class="col-lg-12">
       <table id="table" class="table table-bordered display" width="100%">
 
-        <thead>
+        <thead >
           <tr style="color:white">
-            <th>Album Title</th>
-            <th>Band</th>
-            <th>Data</th>
-            <th>Author</th> 
-            <th>Rating</th>
-            <th>View or Edit Review</th>
+            <th class="text-center">Album Title</th>
+            <th class="text-center">Band</th>
+            <th class="text-center">Data</th>
+            <th class="text-center">View or edit your review</th>
             
 
           </tr>
         </thead>
         <tbody>
-          @foreach ($review as $reviews)
+          @foreach ($review as $id=> $reviews)
           <tr>
 
             <td>{{$reviews->album_title}}</td>
             <td>{{$reviews->band_name}}</td>
             <td>{{$reviews->updated_at}}</td>
-            <td value={{$reviews->user_id}}>{{$reviews->name}}</td>
-           <!-- <td><img height="300px" src="{{ url('albumImages/'.$reviews->album_image)}}" alt="albumImages"></td>-->
-            <td>{{$reviews->rating}}</td>
+           <!-- <td value={{$reviews->user_id}}>{{$reviews->name}}</td>-->
+           
 
 
             {{--EDIT REVIEW--}}
             <td>
               <div class="text-center">
-                <a class="btn btn-info edit" href="{{url('/user/reviews/view-edit-review/'.$reviews->id)}}">VIEW</a>
+                <a class="btn btn-info edit" href="{{url('/user/reviews/view-edit-your-review/'.$reviews->id)}}">VIEW</a>
               </div>
             </td>
 

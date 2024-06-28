@@ -4,6 +4,7 @@
 
   <a href="{{url('user/reviews/add-review')}}" class="btn  btn-primary mt-3 mb-4 form-button">Add review</a>
   
+ 
   <a href="{{url('user/reviews/your-reviews')}}" class="btn  btn-primary mt-3 mb-4 form-button">Your reviews</a>
   
   <a href="{{url('user/dashboard')}}" class="btn  btn-primary mt-3 mb-4 form-button">Dashboard</a>
@@ -16,10 +17,11 @@
 
         <thead>
           <tr style="color:white">
-            <th>Album Title</th>
-            <th>Band</th>
-            <th>Data</th>
-            <th>View Review</th>
+            <th class="text-center">Album Title</th>
+            <th class="text-center">Band</th>
+            <th class="text-center">Data</th>
+            <th class="text-center">View Review</th>
+            
           </tr>
         </thead>
         <tbody>
@@ -38,6 +40,8 @@
                   href="{{url('/user/reviews/view-review/'.$reviews->id.'/'.$reviews->band_name.'/'.$reviews->album_title)}}">VIEW</a>
               </div>
             </td>
+
+            
 
           </tr>
           @endforeach
