@@ -4,6 +4,8 @@
 
   <a href="{{url('user/genres/add-genre')}}" class="btn  btn-primary mt-3 mb-4 form-link">Add genre</a>
   <a href="{{url('user/dashboard')}}" class="btn  btn-primary mt-3 mb-4 form-link">Dashboard</a>
+  <a href="{{url('user/report-an-error')}}" class="btn  btn-danger mt-3 mb-4 form-button" title="Contact us if you have seen a mistake in any section">Report an error</a>
+
 
   <div class="row">
 

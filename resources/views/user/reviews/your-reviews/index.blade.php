@@ -36,7 +36,7 @@
             {{--EDIT REVIEW--}}
             <td>
               <div class="text-center">
-                <a class="btn btn-info edit" href="{{url('/user/reviews/view-edit-your-review/'.$reviews->id)}}">VIEW</a>
+                <a class="btn btn-info edit" href="{{url('/user/reviews/your-reviews/view-edit-your-review/'.$reviews->id)}}">VIEW</a>
               </div>
             </td>
 

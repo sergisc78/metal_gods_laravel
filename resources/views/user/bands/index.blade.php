@@ -4,7 +4,8 @@
 
   <a href="{{url('user/bands/add-band')}}" class="btn  btn-primary mt-3 mb-4 form-button">Add band</a>
   <a href="{{url('user/dashboard')}}" class="btn  btn-primary mt-3 mb-4 form-button">Dashboard</a>
-
+  <a href="{{url('user/report-an-error')}}" class="btn  btn-danger mt-3 mb-4 form-button" title="Contact us if you have seen a mistake in any section">Report an error</a>
+ 
   <div class="row">
 
     <div class="col-lg-12">

@@ -1,4 +1,4 @@
-@include('admin.navbar')
+@include('user.navbar')
 
 
 <div class="container c-form mt-5  d-flex justify-content-center">
@@ -22,10 +22,10 @@
         @endif
         <hr class="mt-4" style="background-color: whitesmoke">
         <div class="text-center">
-          <a href="{{url('admin/reviews')}}"
-            class="btn btn-primary back-cats w-50 mx-auto mt-3 mb-3 form-back">Reviews</a>
+          <a href="{{url('user/reviews/your-reviews')}}"
+            class="btn btn-primary back-cats w-50 mx-auto mt-3 mb-3 form-back">Your Reviews</a>
         </div>
-        <form action="{{url('admin/reviews/view-edit-review/'.$review->id)}}" method="post"
+        <form action="{{url('user/reviews/your-reviews/view-edit-your-review/'.$review->id)}}" method="post"
           enctype="multipart/form-data">
           @csrf
 
@@ -66,7 +66,7 @@
           <div class=" form-group mt-3 text-center">
             <label for="name" class="form-label form-label-title">Release Year</label><br>
             <input type="text" class="form-control form-input-name border border-dark" name="album_year" id="inputs"
-              style="color:black" required value="{{$review->album_year}}">
+              style="color:black" value="{{$review->album_year}}">
             @error('album_year')
             <span class="fs-0.2 text-danger error-message">{{$message}}</span>
             @enderror
@@ -75,7 +75,7 @@
           <div class=" form-group mt-3 text-center">
             <label for="name" class="form-label form-label-title">Internet link</label><br>
             <input type="text" name="album_link" class="form-control form-input-name border border-dark" id="inputs"
-              style="color:black" required value="{{$review->album_link}}">
+              style="color:black"  value="{{$review->album_link}}">
             @error('album_link')
             <span class="fs-0.2 text-danger error-message">{{$message}}</span>
             @enderror
@@ -93,7 +93,7 @@
           <div class="form-group mt-3 text-center">
             <label for="name" class="form-label form-label-title">Rating (* out of 10)</label><br>
             <input type="text" name="rating" class="form-control form-input-name border border-dark" id="inputs"
-              style="color:black" required value="{{$review->rating}}">
+              style="color:black" value="{{$review->rating}}">
             @error('rating')
             <span class="fs-0.2 text-danger error-message">{{$message}}</span>
             @enderror

@@ -66,7 +66,7 @@
           <div class=" form-group mt-3 text-center">
             <label for="name" class="form-label form-label-title">Release Year</label><br>
             <input type="text" class="form-control form-input-name border border-dark" name="album_year" id="inputs"
-              style="color:black" required value="{{$review->album_year}}">
+              style="color:black" value="{{$review->album_year}}">
             @error('album_year')
             <span class="fs-0.2 text-danger error-message">{{$message}}</span>
             @enderror
@@ -75,7 +75,7 @@
           <div class=" form-group mt-3 text-center">
             <label for="name" class="form-label form-label-title">Internet link</label><br>
             <input type="text" name="album_link" class="form-control form-input-name border border-dark" id="inputs"
-              style="color:black" required value="{{$review->album_link}}">
+              style="color:black" value="{{$review->album_link}}">
             @error('album_link')
             <span class="fs-0.2 text-danger error-message">{{$message}}</span>
             @enderror
@@ -93,7 +93,7 @@
           <div class="form-group mt-3 text-center">
             <label for="name" class="form-label form-label-title">Rating (* out of 10)</label><br>
             <input type="text" name="rating" class="form-control form-input-name border border-dark" id="inputs"
-              style="color:black" required value="{{$review->rating}}">
+              style="color:black" value="{{$review->rating}}">
             @error('rating')
             <span class="fs-0.2 text-danger error-message">{{$message}}</span>
             @enderror

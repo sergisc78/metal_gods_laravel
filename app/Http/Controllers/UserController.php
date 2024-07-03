@@ -3,9 +3,13 @@
 namespace App\Http\Controllers;
 
 use App\Models\Band;
+use App\Models\Error;
 use App\Models\Genre;
 use App\Models\Review;
+use App\Models\Section;
 use App\Models\User;
+
+
 
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
@@ -25,6 +29,42 @@ class UserController extends Controller
         return view('user.dashboard');
     }
 
+    //REPORT AN ERROR FORM
+    public static function sendErrorForm()
+    {
+        $section=Section::all();
+        return view('user.report-an-error',compact('section'));
+    }
+
+    //SEND REQUEST
+    public static function sendError(Request $request)
+    {
+
+        // VALIDATIONS / REQUIRED FIELDS
+        request()->validate([
+            'section_name' => 'required',
+            'email' => 'required',
+            'subject' => 'required',
+            'message' => 'required',
+
+        ]);
+
+        
+        $error = new Error();
+        $error->section_id = $request->section_name;
+        $error->email = $request->email;
+        $error->subject = $request->subject;
+        $error->message = $request->message;
+        $error->save();
+
+        return redirect()->back()->with('message', 'Your message has been sent successfully');
+    }
+
+    
+
+    /* REVIEWS */
+
+
     // ADD REVIEW FORM
     public static function addReviewForm()
     {
@@ -37,6 +77,7 @@ class UserController extends Controller
     public static function addReview(Request $request)
     {
 
+        // VALIDATIONS / REQUIRED FIELDS
         request()->validate([
             'band_name' => 'required',
             'genre_name' => 'required',
@@ -88,8 +129,6 @@ class UserController extends Controller
     public static function getReviews()
     {
 
-        
-        
         $review = DB::table('reviews')
             ->join('genres', 'genres.id', '=', 'reviews.genre_id')
             ->join('bands', 'bands.id', '=', 'reviews.band_id')
@@ -100,6 +139,7 @@ class UserController extends Controller
         return view('user.reviews.index', compact('review'));
     }
 
+    // SHOW REVIEW BY ID
     public static function getReviewById($id)
     {
         $review = DB::table('reviews')
@@ -113,78 +153,79 @@ class UserController extends Controller
         return view('user.reviews.view-review', compact('review'));
     }
 
+
+    //SHOW YOUR REVIEWS
     public static function getYourReviews()
     {
-        
+
         $review = DB::table('reviews')
             ->join('bands', 'bands.id', '=', 'reviews.band_id')
             ->join('users', 'users.id', '=', 'reviews.user_id')
-            ->select('reviews.*','bands.band_name', 'users.name')
-            ->where('users.name','=',Auth::user()->name)
+            ->select('reviews.*', 'bands.band_name', 'users.name')
+            ->where('users.name', '=', Auth::user()->name)
             ->get();
 
-            return view('user.reviews.your-reviews', compact('review'));
+        return view('user.reviews.your-reviews.index', compact('review'));
     }
 
 
     //SHOW YOUR REVIEW BY ID
     public static function getYourReviewById($id)
     {
-        $review = DB::table('reviews')
-            ->join('genres', 'genres.id', '=', 'reviews.genre_id')
-            ->join('bands', 'bands.id', '=', 'reviews.band_id')
-            ->join('users', 'users.id', '=', 'reviews.user_id')
-            ->select('reviews.*', 'genres.genre_name', 'bands.band_name', 'users.name')
-            ->where('reviews.id', $id)
-            ->get();
 
-        return view('user.reviews.view-edit-your-review', compact('review'));
+        $band = Band::all();
+        $genre = Genre::all();
+        $review = Review::find($id);
+
+        return view('user.reviews.your-reviews.view-edit-your-review', compact('review', 'band', 'genre'));
     }
 
-     // VIEW OR EDIT REVIEW
-     public static function viewEditYourReview(Request $request, $id)
-     {
- 
-         // VALIDATION
-         request()->validate([
-             'band_name' => 'required',
-             'genre_name' => 'required',
-             'name' => 'required',
-             'album_title' => 'required',
-             'album_year' => 'required',
-             'album_link' => 'required',
-             'album_review' => 'required',
-             'rating' => 'required',
- 
-         ]);
- 
-         $review = Review::find($id);
-         $review->genre_id = $request->genre_name;
-         $review->band_id = $request->band_name;
-         $review->album_title = $request->album_title;
-         $review->album_year = $request->album_year;
-         $review->album_link = $request->album_link;
-         $review->album_review = $request->album_review;
-         $review->rating = $request->rating;
- 
-         // IF THERE IS A NEW IMAGE,UPDATE IT 
- 
-         $image = $request->album_image;
-         if ($image) {
- 
-             $imageName = time() . '.' . $image->getClientOriginalExtension();
-             $request->album_image->move('albumImages', $imageName);
-             $review->album_image = $imageName;
-         }
- 
-         $review->save();
- 
-         return redirect()->back()->with('message', 'Review updated successfully');
-     }
+    // EDIT YOUR REVIEW BY ID
+    public static function editYourReview(Request $request, $id)
+    {
+
+        // VALIDATIONS / REQUIRED FIELDS
+        request()->validate([
+            'band_name' => 'required',
+            'genre_name' => 'required',
+
+            'album_title' => 'required',
+            'album_year' => 'required',
+            'album_link' => 'required',
+            'album_review' => 'required',
+            'rating' => 'required',
+
+        ]);
+
+        $review = Review::find($id);
+        $review->genre_id = $request->genre_name;
+        $review->band_id = $request->band_name;
+        $review->album_title = $request->album_title;
+        $review->album_year = $request->album_year;
+        $review->album_link = $request->album_link;
+        $review->album_review = $request->album_review;
+        $review->rating = $request->rating;
+
+        // IF THERE IS A NEW IMAGE,UPDATE IT 
+
+        $image = $request->album_image;
+        if ($image) {
+
+            $imageName = time() . '.' . $image->getClientOriginalExtension();
+            $request->album_image->move('albumImages', $imageName);
+            $review->album_image = $imageName;
+        }
+
+        $review->save();
+
+        return redirect()->back()->with('message', 'Review updated successfully');
+    }
 
 
 
     /* BANDS */
+
+
     //ADD BAND FORM
     public static function addBandForm()
     {
@@ -195,7 +236,7 @@ class UserController extends Controller
     public static function addBand(Request $request)
     {
 
-        // VALIDATION
+        // VALIDATIONS / REQUIRED FIELDS
         request()->validate([
             'band_name' => 'required',
             'band_country' => 'required',
@@ -240,10 +281,11 @@ class UserController extends Controller
     {
         return view('user.genres.add-genre');
     }
+
     //ADD GENRE
     public static function addGenre(Request $request)
     {
-        // VALIDATION
+        // VALIDATIONS / REQUIRED FIELDS
         request()->validate([
             'genre_name' => 'required',
         ]);
@@ -259,7 +301,6 @@ class UserController extends Controller
             return redirect()->back()->with('message', 'Genre added successfully');
         }
     }
-
 
 
     //SHOW ALL GENRES
