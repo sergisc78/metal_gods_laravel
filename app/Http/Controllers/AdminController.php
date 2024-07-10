@@ -3,9 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Models\Band;
+use App\Models\Error;
 use App\Models\Genre;
 use App\Models\Review;
 use App\Models\User;
+
 
 use Illuminate\Support\Facades\DB;
 
@@ -251,6 +253,7 @@ class AdminController extends Controller
         }
     }
 
+    //SHOW REVIEWS
     public static function getReviews()
     {
 
@@ -358,5 +361,18 @@ class AdminController extends Controller
     {
         User::find($id)->delete();
         return back();
+    }
+
+
+
+    /* REPORTS*/
+
+
+    public static function getReports(){
+        $report = DB::table('errors')
+            ->join('sections', 'sections.id', '=', 'errors.section_id')
+            ->select('errors.*', 'sections.section_name')
+            ->get();
+        return view('admin.reports.index', compact('report'));
     }
 }

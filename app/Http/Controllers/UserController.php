@@ -32,8 +32,8 @@ class UserController extends Controller
     //REPORT AN ERROR FORM
     public static function sendErrorForm()
     {
-        $section=Section::all();
-        return view('user.report-an-error',compact('section'));
+        $section = Section::all();
+        return view('user.report-an-error', compact('section'));
     }
 
     //SEND REQUEST
@@ -49,7 +49,7 @@ class UserController extends Controller
 
         ]);
 
-        
+
         $error = new Error();
         $error->section_id = $request->section_name;
         $error->email = $request->email;
@@ -60,7 +60,7 @@ class UserController extends Controller
         return redirect()->back()->with('message', 'Your message has been sent successfully');
     }
 
-    
+
 
     /* REVIEWS */
 
@@ -105,7 +105,7 @@ class UserController extends Controller
             $review->genre_id = $request->genre_name;
             $review->band_id = $request->band_name;
             $review->user_id = $request->name;
-            $review->album_title = $request->album_title;
+            $review->album_title =ucwords(strtolower($request->album_title));
 
             //ADD IMAGE
 
@@ -222,6 +222,14 @@ class UserController extends Controller
     }
 
 
+    //DELETE YOUR REVIEW
+    public static function deleteYourReview($id)
+    {
+        Review::find($id)->delete();
+        return back();
+    }
+
+
 
     /* BANDS */
 
@@ -258,9 +266,9 @@ class UserController extends Controller
             $band->band_image = $imageName;
 
             //ADD OTHER DATA
-            $band->band_name = ucfirst($request->band_name);
-            $band->band_country = ucfirst($request->band_country);
-            $band->band_year_creation = ucfirst($request->band_year_creation);
+            $band->band_name = ucfirst(strtolower($request->band_name));
+            $band->band_country = ucfirst(strtolower($request->band_country));
+            $band->band_year_creation = ucfirst(strtolower($request->band_year_creation));
 
             $band->save();
 
@@ -296,7 +304,7 @@ class UserController extends Controller
         if (Genre::where('genre_name', '=', $genre_name)->exists()) {
             return redirect()->back()->with('message', $genre_name . ' exists in database !');
         } else { //INSERT GENRE
-            $genre->genre_name = ucfirst($request->genre_name);
+            $genre->genre_name = ucfirst(strtolower($request->genre_name));
             $genre->save();
             return redirect()->back()->with('message', 'Genre added successfully');
         }

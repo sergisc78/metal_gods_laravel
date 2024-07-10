@@ -67,6 +67,9 @@ Route::get('/admin/users/edit-role/{id}',[AdminController::class,'getUserById'])
 Route::post('/admin/users/edit-role/{id}',[AdminController::class,'editUserRole']);
 Route::get('/admin/users/{id}', [AdminController::class, 'deleteUser']);
 
+/*REPORTS*/
+Route::get('/admin/reports',[AdminController::class,'getReports']);
+
 
                                  /* USER ROUTES */
 
@@ -78,6 +81,8 @@ Route::get('/user/reviews/view-review/{id}/{band}/{album}',[UserController::clas
 Route::get('/user/reviews/your-reviews',[UserController::class,'getYourReviews']);
 Route::get('/user/reviews/your-reviews/view-edit-your-review/{id}',[UserController::class,'getYourReviewById']);
 Route::post('user/reviews/your-reviews/view-edit-your-review/{id}',[UserController::class,'editYourReview']);
+Route::get('/user/reviews/your-reviews/{id}',[UserController::class,'deleteYourReview']);
+
 Route::get('/user/report-an-error',[UserController::class,'sendErrorForm']);
 Route::post('/user/report-an-error',[UserController::class,'sendError']);
 

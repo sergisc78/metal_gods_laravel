@@ -11,11 +11,10 @@
         <!--MESSAGE OF SUCCESS-->
         @if (session()->has('message'))
         <div class="alert alert-dismissible alert-success text-center" style="style="
-          margin-top:150px;width:370px;margin-left: auto;margin-right: 40px;font-size:18px;font-family: Montserrat,
+          margin-top:150px;width:370px;margin-left: auto;margin-right: 40px;font-size:12px;font-family: Montserrat,
           sans-serif;">
           {{session()->get('message')}}
           <button type="button" class="btn-close" data-bs-dismiss="alert" style="float:end">
-
           </button>
         </div>
 
