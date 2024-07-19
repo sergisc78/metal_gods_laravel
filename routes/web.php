@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\MetalGodsController;
 use App\Http\Controllers\ProfileController;
 use App\Models\User;
 use Illuminate\Support\Facades\Route;
@@ -96,6 +97,10 @@ Route::get('/user/genres/add-genre',[UserController::class,'addGenreForm']);
 Route::post('/user/addGenre',[UserController::class,'addGenre']);
 Route::get('/user/genres',[UserController::class,'getGenres']);
 
+
+
+/*HOME*/
+Route::get('/reviews/last-reviews',[MetalGodsController::class,'getLastReviews']);
                         
 
 require __DIR__.'/auth.php';

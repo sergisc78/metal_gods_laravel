@@ -200,7 +200,7 @@ class UserController extends Controller
         $review = Review::find($id);
         $review->genre_id = $request->genre_name;
         $review->band_id = $request->band_name;
-        $review->album_title = $request->album_title;
+        $review->album_title = ucwords(strtolower($request->album_title));
         $review->album_year = $request->album_year;
         $review->album_link = $request->album_link;
         $review->album_review = $request->album_review;

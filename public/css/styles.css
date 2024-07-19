@@ -6,6 +6,7 @@ body {
 
   font-weight: 800;
   font-style: normal;
+ 
 
 }
 
@@ -98,6 +99,31 @@ body {
   font-optical-sizing: auto;
   font-weight: 800;
   font-style: normal;
+}
+
+/*WELCOME*/
+.menu-img{
+  object-fit: cover;
+}
+.span-title{
+  margin-top: 25px;
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  color: white;
+
+}
+.menu-home{
+  margin-top: 100px;
+}
+
+.table-last-reviews{
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
+  font-size:15px;
 }
 
 /* DASHBOARD */

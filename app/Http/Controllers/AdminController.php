@@ -52,7 +52,7 @@ class AdminController extends Controller
         } else { // ELSE, INSERT IT
             $genre = new Genre;
 
-            $genre->genre_name = ucfirst($request->genre_name);
+            $genre->genre_name = ucfirst(strtolower($request->genre_name));
             $genre->save();
             return redirect()->back()->with('message', 'Genre added successfully');
         }
@@ -80,7 +80,7 @@ class AdminController extends Controller
             'genre_name' => 'required',
         ]);
         $genre = Genre::find($id);
-        $genre->genre_name = $request->genre_name;
+        $genre->genre_name =ucwords(strtolower($request->genre_name));
         $genre->save();
         return redirect()->back()->with('message', 'Genre updated successfully');
     }
@@ -114,7 +114,7 @@ class AdminController extends Controller
         ]);
 
         $band = new Band;
-        $band_name = $request->band_name;
+        $band_name =($request->band_name);
 
         // IF BAND EXIST
         if (Band::where('band_name', '=', $band_name)->exists()) {
@@ -128,9 +128,9 @@ class AdminController extends Controller
             $band->band_image = $imageName;
 
             //ADD OTHER DATA
-            $band->band_name = ucfirst($request->band_name);
-            $band->band_country = ucfirst($request->band_country);
-            $band->band_year_creation = ucfirst($request->band_year_creation);
+            $band->band_name = ucwords(strtolower($request->band_name));
+            $band->band_country = ucwords(strtolower($request->band_country));
+            $band->band_year_creation = $request->band_year_creation;
 
             $band->save();
 
@@ -163,8 +163,8 @@ class AdminController extends Controller
 
         $band = Band::find($id);
         // BAND DATA
-        $band->band_name = $request->band_name;
-        $band->band_country = $request->band_country;
+        $band->band_name = ucwords(strtolower($request->band_name));
+        $band->band_country = ucwords(strtolower($request->band_country));
         $band->band_year_creation = $request->band_year_creation;
 
 
@@ -233,7 +233,7 @@ class AdminController extends Controller
             $review->genre_id = $request->genre_name;
             $review->band_id = $request->band_name;
             $review->user_id = $request->name;
-            $review->album_title = $request->album_title;
+            $review->album_title = ucwords(strtolower($request->album_title));
 
             //ADD IMAGE
 
@@ -296,7 +296,7 @@ class AdminController extends Controller
         $review = Review::find($id);
         $review->genre_id = $request->genre_name;
         $review->band_id = $request->band_name;
-        $review->album_title = $request->album_title;
+        $review->album_title = ucwords(strtolower($request->album_title));
         $review->album_year = $request->album_year;
         $review->album_link = $request->album_link;
         $review->album_review = $request->album_review;
