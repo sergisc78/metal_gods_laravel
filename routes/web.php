@@ -99,8 +99,12 @@ Route::get('/user/genres',[UserController::class,'getGenres']);
 
 
 
-/*HOME*/
-Route::get('/reviews/last-reviews',[MetalGodsController::class,'getLastReviews']);
-                        
+                               /*HOME*/
+Route::get('/reviews',[MetalGodsController::class,'getReviews']);
+Route::get('/reviews/review/{id}/{band}/{album}',[MetalGodsController::class,'getReviewById']);
+Route::get('/bands',[MetalGodsController::class,'getBands']);
+Route::get('/bands/discography/{id}/{band}',[MetalGodsController::class,'getBandById']);
+Route::get('/report-an-error',[MetalGodsController::class,'sendErrorForm']);
+Route::post('/report-an-error',[MetalGodsController::class,'sendError']);                   
 
 require __DIR__.'/auth.php';

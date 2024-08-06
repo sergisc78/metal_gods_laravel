@@ -26,6 +26,20 @@ body {
   color: black;
 }
 
+.band-image{
+  cursor:pointer;
+  object-fit: cover;
+  margin:auto;
+  text-align: center;
+  
+
+}
+/*
+.band-image:hover{
+  transform: scale(2.5);
+  
+}*/
+
 
 /* FORMS */
 .c-form {

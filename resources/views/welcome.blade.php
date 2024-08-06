@@ -91,7 +91,7 @@
   <div class="container text-center">
     <div class="row menu-home">
       <div class="col">
-        <a href="{{url('reviews/last-reviews')}}"><img src="{{url('img/metal_bands.jpeg')}}" class="menu-img" alt="" width="60%" height="200px"></a>
+        <a href="{{url('bands')}}"><img src="{{url('img/metal_bands.jpeg')}}" class="menu-img" alt="" width="60%" height="200px"></a>
         
       <p class="span-title mt-2">Bands</p>
       </div> 
@@ -100,7 +100,7 @@
       <p class="span-title mt-2">Welcome to metal gods !</p>
       </div> 
       <div class="col">
-        <img src="{{url('img/heavy_reviews.jpeg')}}" alt="" class="menu-img" width="60%" height="200px">
+        <a href="{{url('reviews')}}"> <img src="{{url('img/heavy_reviews.jpeg')}}" alt="" class="menu-img" width="60%" height="200px"></a>
         <p class="span-title mt-2">Reviews</p>
       </div>
       
