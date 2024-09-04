@@ -115,7 +115,7 @@ class AdminController extends Controller
 
         $band = new Band;
         $band_name =($request->band_name);
-
+        
         // IF BAND EXIST
         if (Band::where('band_name', '=', $band_name)->exists()) {
             return redirect()->back()->with('message', 'Band already exists in database !');

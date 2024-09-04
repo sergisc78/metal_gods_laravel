@@ -17,12 +17,12 @@
   </script>
   <link rel="stylesheet" href="{{url('/css/styles.css')}}">
 
-  <!-- GOOGLE FONTS-->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
-    rel="stylesheet">
+  <!-- GOOLE FONTS-->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,400..900;1,400..900&family=Merriweather+Sans:ital,wght@0,300..800;1,300..800&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+
 
 </head>
 
@@ -54,7 +54,7 @@
         <div class="offcanvas-body d-flex flex-column flex-lg-row p-4 p-lg-0">
           <ul class="navbar-nav justify-content-center align-items-center fs-5 flex-grow-1 pe-3">
             <li class="nav-item">
-              <a class="nav-body mx-2 text-decoration-none" aria-current="page" href="#">Home</a>
+              <a class="nav-body mx-2 text-decoration-none" aria-current="page" href="/">Home</a>
             </li>
             <li class="nav-item mx-2">
               <a class="nav-body text-decoration-none" href="#">About Us</a>

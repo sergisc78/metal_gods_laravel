@@ -78,7 +78,7 @@ Route::get('/admin/reports',[AdminController::class,'getReports']);
 Route::get('/user/reviews/add-review',[UserController::class,'addReviewForm']); 
 Route::post('/user/addReview',[UserController::class,'addReview']);
 Route::get('/user/reviews/',[UserController::class,'getReviews']);
-Route::get('/user/reviews/view-review/{id}/{band}/{album}',[UserController::class,'getReviewById']);
+Route::get('/user/reviews/view_review/{id}/{band}/{album}',[UserController::class,'getReviewById']);
 Route::get('/user/reviews/your-reviews',[UserController::class,'getYourReviews']);
 Route::get('/user/reviews/your-reviews/view-edit-your-review/{id}',[UserController::class,'getYourReviewById']);
 Route::post('user/reviews/your-reviews/view-edit-your-review/{id}',[UserController::class,'editYourReview']);
@@ -104,6 +104,8 @@ Route::get('/reviews',[MetalGodsController::class,'getReviews']);
 Route::get('/reviews/review/{id}/{band}/{album}',[MetalGodsController::class,'getReviewById']);
 Route::get('/bands',[MetalGodsController::class,'getBands']);
 Route::get('/bands/discography/{id}/{band}',[MetalGodsController::class,'getBandById']);
+Route::get('/bands/discography/album/{band}/{album}',[MetalGodsController::class,'getAlbumByTitle']);
+Route::get('/bands/discography/review/{id}/{album}',[MetalGodsController::class,'getReviewsById']);
 Route::get('/report-an-error',[MetalGodsController::class,'sendErrorForm']);
 Route::post('/report-an-error',[MetalGodsController::class,'sendError']);                   
 

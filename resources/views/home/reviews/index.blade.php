@@ -54,8 +54,7 @@
 
 <div class="container mt-5" id="allbands">
 
-<a href="{{url('/login')}}" class=" btn btn-outline-primary mt-3 mb-4 form-button">Write a review</a>
-<a href="{{url('/report-an-error')}}" class="btn  btn-outline-danger mt-3 mb-4 form-button" title="Contact us if you have seen a mistake in any section">Report an error</a>
+@include('home.buttons_1')
   
 <div class="row">
 
@@ -76,8 +75,8 @@
         <tbody>
           @foreach ($review as $reviews)
           <tr>
-            <td>{{$reviews->album_title}}</td>
-            <td>{{$reviews->band_name}}</td>
+            <td>{{str_replace('_','  ',$reviews->album_title)}}</td>
+            <td>{{str_replace('_','  ',$reviews->band_name)}}</td>
             <td>{{$reviews->rating}}</td>
             <td value={{$reviews->user_id}}>{{$reviews->name}}</td>
             <td>{{$reviews->updated_at}}</td>
@@ -87,7 +86,7 @@
 
             <td>
               <div class="text-center">
-                <a class="btn btn-info edit form-button-index" href="{{url('/reviews/review/'.$reviews->id.'/'.str_replace(" ", "-", $reviews->band_name).'/'.  str_replace(" ", "-", $reviews->album_title))}}"">READ</a>
+                <a class="btn btn-ligth edit form-button-index" title="Read review" href="{{url('/reviews/review/'.$reviews->id.'/'.str_replace(" ", "-", $reviews->band_name).'/'.  str_replace(" ", "-", $reviews->album_title))}}""><img src="{{url('img/pentagram.png')}}" height="40px" alt="read_review"></a>
               </div>
             </td>
 

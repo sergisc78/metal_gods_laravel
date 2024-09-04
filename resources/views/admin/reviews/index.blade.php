@@ -26,8 +26,8 @@
           @foreach ($review as $reviews)
           <tr>
 
-            <td>{{$reviews->album_title}}</td>
-            <td>{{$reviews->band_name}}</td>
+            <td>{{str_replace('_','  ',$reviews->album_title)}}</td>
+            <td>{{str_replace('_','  ',$reviews->band_name)}}</td>
             <td>{{$reviews->updated_at}}</td>
             <td value={{$reviews->user_id}}>{{$reviews->name}}</td>
            <!-- <td><img height="300px" src="{{ url('albumImages/'.$reviews->album_image)}}" alt="albumImages"></td>-->

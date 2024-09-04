@@ -2,10 +2,10 @@
 
 <div class="container" id="allbands">
 
-  <a href="{{url('/')}}" class="btn  btn-outline-primary mt-3 mb-4 form-button">Back</a>
-  <a href="{{url('/login')}}" class="btn  btn-outline-primary mt-3 mb-4 form-button">Add a Band</a>
  
-  <a href="{{url('/report-an-error')}}" class="btn  btn-outline-danger float-end mt-3 mb-4 form-button" title="Contact us if you have seen a mistake in any section">Report an error</a>
+  <a href="{{url('/login')}}" title="Add band" class="btn  btn-outline-light mt-3 mb-4 form-button"><img src="{{url('img/pentagrama.png')}}" height="50px" alt=""></a>
+ 
+  <a href="{{url('/report-an-error')}}" class="btn  btn-outline-danger float-end mt-3 mb-4 form-button" title="Contact us if you have seen a mistake in any section"><img src="{{url('img/demonio.png')}}" height="50px" alt=""></a>
  
   <div class="row">
 
@@ -28,7 +28,7 @@
           @foreach ($band as $bands)
           <tr>
             
-            <td><a href="{{url('bands/discography/'.$bands->id.'/'.str_replace(" ", "-", $bands->band_name))}}" style="text-decoration:none;color:black">{{$bands->band_name}}</a></td>
+            <td><a href="{{url('bands/discography/'.$bands->id.'/'.str_replace("", "", $bands->band_name))}}" style="text-decoration:none;color:black">{{str_replace('_','   ',$bands->band_name)}}</a></td>
             <td>{{$bands->band_country}}</td>
             <td>{{$bands->band_year_creation}}</td>
 

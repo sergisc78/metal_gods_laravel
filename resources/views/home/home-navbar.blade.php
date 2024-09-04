@@ -118,7 +118,7 @@
         <div class="offcanvas-body d-flex flex-column flex-lg-row p-4 p-lg-0">
           <ul class="navbar-nav justify-content-center align-items-center fs-5 flex-grow-1 pe-3">
             <li class="nav-item">
-              <a class="nav-body mx-2 text-decoration-none" aria-current="page" href="#">Home</a>
+              <a class="nav-body mx-2 text-decoration-none" aria-current="page" href="/">Home</a>
             </li>
             <li class="nav-item mx-2">
               <a class="nav-body text-decoration-none" href="#">About Us</a>

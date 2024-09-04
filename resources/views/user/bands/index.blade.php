@@ -27,7 +27,7 @@
           @foreach ($band as $bands)
           <tr>
             <td>{{$bands->id}}</td>
-            <td>{{$bands->band_name}}</td>
+            <td>{{str_replace('_','  ',$bands->band_name)}}</td>
             <td>{{$bands->band_country}}</td>
             <td>{{$bands->band_year_creation}}</td>
 

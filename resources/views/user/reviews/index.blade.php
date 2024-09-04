@@ -25,8 +25,8 @@
           @foreach ($review as $reviews)
           <tr>
 
-            <td>{{$reviews->album_title}}</td>
-            <td>{{$reviews->band_name}}</td>
+            <td>{{str_replace('_','   ',$reviews->album_title)}}</td>
+            <td>{{str_replace('_','  ',$reviews->band_name)}}</td>
             <td>{{$reviews->updated_at}}</td>
             
 
@@ -34,7 +34,7 @@
             <td>
               <div class="text-center">
                 <a class="btn btn-info edit"
-                  href="{{url('/user/reviews/view-review/'.$reviews->id.'/'.$reviews->band_name.'/'.$reviews->album_title)}}">VIEW</a>
+                  href="{{url('/user/reviews/view_review/'.$reviews->id.'/'.$reviews->band_name.'/'.$reviews->album_title)}}">VIEW</a>
               </div>
             </td>
 

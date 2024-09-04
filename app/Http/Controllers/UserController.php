@@ -95,11 +95,7 @@ class UserController extends Controller
         $album_title = $request->album_title;
 
 
-        //CHECK IF YOU HAVE ALREADY REVIEWED THE ALBUM
-
-        if (Review::where('user_id', '=', $user_id)->exists() && Review::where('album_title', '=', $album_title)->exists()) {
-            return redirect()->back()->with('message', 'This album  has already reviewed by you !');
-        } else { //ADD REVIEW
+         //ADD REVIEW
             $review = new Review();
 
             $review->genre_id = $request->genre_name;
@@ -122,7 +118,7 @@ class UserController extends Controller
             $review->save();
 
             return redirect()->back()->with('message', 'Review added successfully');
-        }
+        
     }
 
     //SHOW ALL REVIEWS
@@ -150,7 +146,7 @@ class UserController extends Controller
             ->where('reviews.id', $id)
             ->get();
 
-        return view('user.reviews.view-review', compact('review'));
+        return view('user.reviews.view_review', compact('review'));
     }
 
 

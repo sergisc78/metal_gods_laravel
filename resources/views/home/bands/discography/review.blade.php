@@ -1,19 +1,16 @@
-@include('user.navbar')
-
+@include('home.home-navbar')
 
 <div class="container review-card" id="allbands">
 
-  <a href="{{url('user/reviews')}}" class="btn  btn-primary mt-3 mb-4 form-button">Reviews</a>
-  <a href="{{url('user/dashboard')}}" class="btn  btn-primary mt-3 mb-4 form-button">Dashboard</a>
-
+ @include('home.buttons_1')
 
 
 
 
   <div class="card m-auto" style="width: 100%">
     @foreach ($review as $id=>$reviews)
-    <h1 class="band_name_band_title text-center mb-3 mt-4">{{$reviews->band_name}} - {{$reviews->album_title}}
-      ({{$reviews->album_year}}) </h1>
+    <h3 class="band_name_band_title text-center mb-3 mt-4">{{str_replace('_','   ',$reviews->band_name)}} - {{str_replace('_','  ',$reviews->album_title)}}
+      ({{$reviews->album_year}}) </h3>
 
     <img src="{{ url('albumImages/'.$reviews->album_image)}}" alt="album_image" width="30%"
       class=" album-cover m-auto mb-2">
@@ -32,7 +29,7 @@
 
       <p class="review-link text-center"><a class="youtube-link" href="{{$reviews->album_link}}" target="_blank">Dou you
           want to
-          listen this album? <span class="text-uppercase" style="color: blue">Youtube album link</span> </a></p>
+          listen this album? </a></p>
     </div>
     @endforeach
     <br>
@@ -43,5 +40,4 @@
 
 
 
-
-  @include('admin.footer')
+@include('home.footer')

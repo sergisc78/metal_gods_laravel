@@ -2,9 +2,9 @@ body {
   background-image: url('/img/background.jpg');
   background-size: cover;
   background-repeat: no-repeat;
-  font-family: "Merriweather Sans", sans-serif;
+  font-family: "Montserrat", sans-serif;
 
-  font-weight: 800;
+  font-weight: 600;
   font-style: normal;
  
 
@@ -65,7 +65,7 @@ body {
 }
 
 .form-back,.form-button,.form-input-name,.form-link {
-  font-size: 20px;
+  font-size: 18px;
   font-family: "Montserrat", sans-serif;
   font-optical-sizing: auto;
   font-weight: 300;

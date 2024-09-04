@@ -2,11 +2,7 @@
 
 <div class="container" id="allbands">
 
-  <a href="{{url('/')}}" class="btn  btn-outline-primary mt-3 mb-4 form-button">Back</a>
-  <a href="{{url('/login')}}" class="btn btn-outline-primary mt-3 mb-4 form-button">Add a Band</a>
-
-  <a href="{{url('/report-an-error')}}" class="btn  btn-outline-danger float-end mt-3 mb-4 form-button"
-    title="Contact us if you have seen a mistake in any section">Report an error</a>
+  @include('home.buttons_1')
 
   <div class="row">
 
@@ -19,7 +15,7 @@
 
 
             <th>Album</th>
-            <th>Year </th>
+            <th>Year</th>
             <th>Cover</th>
             <th>Average</th>
 
@@ -32,12 +28,12 @@
           <tr>
 
 
-            <td><a href="{{url('bands/discography/album/'.$bands->id.'/'.str_replace(" ", "-", $bands->band_name))}}" style="text-decoration:none;color:black"')}}">{{$bands->album_title}}</a></td>
+            <td><a href="{{url('bands/discography/album/'.$bands->band_name.'/'.$bands->album_title)}}" style="text-decoration:none;color:black">{{str_replace('_','   ',$bands->album_title)}}</a></td>
             <td>{{$bands->album_year}}</td>
 
 
-            <td><img class="band-image" height="125px" src="{{ url('albumImages/'.$bands->album_image)}}"
-                alt="bandImages"></td>
+            <td><a href="{{url('bands/discography/album/'.$bands->band_name.'/'.$bands->album_title)}}"><img class="band-image" height="125px" src="{{ url('albumImages/'.$bands->album_image)}}"
+                alt="bandImages"></a></td>
                 <td>{{$bands->rating}}</td>
           </tr>
           @endforeach
