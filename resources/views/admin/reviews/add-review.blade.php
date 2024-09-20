@@ -23,7 +23,7 @@
         <hr class="mt-4" style="background-color: whitesmoke">
         <div class="text-center">
           <a href="{{url('admin/reviews')}}"
-            class="btn btn-primary back-cats w-50 mx-auto mt-3 mb-3 form-back">Reviews</a>
+            class="btn btn-primary back-cats w-50 mx-auto mt-3 mb-3 form-back" title="Back">Reviews</a>
         </div>
         <form action="{{url('admin/addReview')}}" method="post" enctype="multipart/form-data">
           @csrf

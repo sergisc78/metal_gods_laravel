@@ -2,7 +2,7 @@
 
 <div class="container" id="allbands">
 
-  <a href="{{url('admin/dashboard')}}" class="btn  btn-primary mt-3 mb-4 form-button">Dashboard</a>
+  <a href="{{url('admin/dashboard')}}" title="Dashboard" class="btn  btn-outline-light mt-3 mb-4 form-button"><img src="{{url('img/home.png')}}" width="40px" height="30px"  alt="dashboard_icon"></a>
 
   <div class="row">
 
@@ -33,7 +33,7 @@
             {{--DELETE REPORT --}}
             <td>
               <div class="text-center">
-                <button class="btn btn-danger delete form-button-index" data-id={{'/admin/bands/'.$reports->id}}>DELETE</button>
+                <button class="btn btn-outline-light delete form-button-index" title="Delete report" data-id={{'/admin/bands/'.$reports->id}}><img src="{{url('img/devil_delete.png')}}" height="40px" width="50px" alt="devil_delete_icon"></button>
               </div>
             </td>
 
@@ -60,7 +60,9 @@
     <!-- DATATABLES SCRIPT-->
     <script>
       $(document).ready(function () {
-          $('#table').DataTable();
+          $('#table').DataTable({
+            "order":[4,'asc']
+          });
 });
     </script>
 

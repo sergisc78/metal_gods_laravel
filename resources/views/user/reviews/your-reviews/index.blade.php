@@ -2,9 +2,9 @@
 
 <div class="container" id="allbands">
 
-  <a href="{{url('user/reviews')}}" class="btn  btn-primary mt-3 mb-4 form-button">Reviews</a>
+  <a href="{{url('user/reviews')}}" title="Reviews" class="btn  btn-outline-light mt-3 mb-4 form-button"><img src="{{url('img/metal-guitar.png')}}" width="40px" height="30px"  alt="dashboard_icon"></a>
+  <a href="{{url('user/dashboard')}}" title="Dashboard" class="btn  btn-outline-light mt-3 mb-4 form-button"><img src="{{url('img/home.png')}}" width="40px" height="30px"  alt="dashboard_icon"></a>
 
-  <a href="{{url('user/dashboard')}}" class="btn  btn-primary mt-3 mb-4 form-button">Dashboard</a>
 
 
   <div class="row">
@@ -37,16 +37,16 @@
             {{--VIEW / EDIT REVIEW--}}
             <td>
               <div class="text-center">
-                <a class="btn btn-info edit"
-                  href="{{url('/user/reviews/your-reviews/view-edit-your-review/'.$reviews->id)}}">VIEW</a>
+                <a class="btn btn-outline-light"
+                  href="{{url('/user/reviews/your-reviews/view-edit-your-review/'.$reviews->id)}}" title="View / Edit" ><img src="{{url('img/demon_edit.png')}}" width="40px" height="40px" alt="demon_edit_icon"></a>
               </div>
             </td>
 
             {{--DELETE REVIEW --}}
             <td>
               <div class="text-center">
-                <button class="btn btn-danger delete"
-                  data-id={{'/user/reviews/your-reviews/'.$reviews->id}}>DELETE</button>
+                <button class="btn btn-outline-light"
+                  data-id={{'/user/reviews/your-reviews/'.$reviews->id}} title="Delete" ><img src="{{url('img/devil_delete.png')}}" width="40px" height="40px" alt="devil_delete_icon"></button>
               </div>
             </td>
 

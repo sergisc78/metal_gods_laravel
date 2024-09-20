@@ -125,29 +125,23 @@
               <a class="nav-body mx-2 text-decoration-none" aria-current="page" href="/">Home</a>
             </li>
             <li class="nav-item mx-2">
-              <a class="nav-body text-decoration-none" href="{{url('aboutUs')}}">About Us</a>
+              <a class="nav-body text-decoration-none" href="#">About Us</a>
             </li>
 
             <li class="nav-item mx-2">
-              <a class="nav-body text-decoration-none" href="{{url('contact')}}">Contact</a>
+              <a class="nav-body text-decoration-none" href="#">Contact Us</a>
             </li>
           </ul>
           <!-- Login and Sing up -->
-          @if (Route::has('login'))
-          <div class=" loginRegister d-flex justify-content-center flex-column flex-lg-row align-items-center gap-3">
-            @auth
-            <a href="{{ url('/dashboard') }}"
-              class="font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Dashboard</a>
-            @else
-            <a href="{{ route('login') }}" class="text-black text-decoration-none">Log in</a>
+          
 
             @if (Route::has('register'))
             <a href="{{ route('register') }}"
               class="text-white text-decoration-none px-3 py-1 btn btn-primary rounded-4">Register</a>
             @endif
-            @endauth
+            
 
-            @endif
+            
           </div>
 
         </div>

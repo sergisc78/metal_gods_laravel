@@ -32,7 +32,7 @@
   <nav class="navbar navbar-expand-lg navbar-dark bg-transparent" style="text-color:black">
     <div class="container">
       <!-- Logo-->
-      <a class="navbar-brand fs-4 text-black" href="#">Metal Gods</a>
+      <a class="navbar-brand fs-4 text-black" href="/">Metal Gods</a>
       <!-- Toogle Btn-->
       <button class="navbar-toggler shadow-none-border-0" type="button" data-bs-toggle="offcanvas"
         data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation"
@@ -57,11 +57,11 @@
               <a class="nav-body mx-2 text-decoration-none" aria-current="page" href="/">Home</a>
             </li>
             <li class="nav-item mx-2">
-              <a class="nav-body text-decoration-none" href="#">About Us</a>
+              <a class="nav-body text-decoration-none" href="{{url('aboutUs')}}">About Us</a>
             </li>
 
             <li class="nav-item mx-2">
-              <a class="nav-body text-decoration-none" href="#">Contact Us</a>
+              <a class="nav-body text-decoration-none" href="{{url('contact')}}">Contact</a>
             </li>
           </ul>
           <!-- Login and Sing up -->
@@ -90,18 +90,19 @@
   
   <div class="container text-center">
     <div class="row menu-home">
-      <div class="col">
-        <a href="{{url('bands')}}"><img src="{{url('img/metal_bands.jpeg')}}" class="menu-img" alt="" width="60%" height="200px"></a>
+      <div class="col mt-3">
+        <a href="{{url('bands')}}"><img src="{{url('img/banyes.png')}}" class="menu-img" title="Bands" alt="" width="50%" ></a>
         
-      <p class="span-title mt-2">Bands</p>
+     
       </div> 
       <div class="col">
         
-      <p class="span-title mt-2">Welcome to metal gods !</p>
-      </div> 
-      <div class="col">
-        <a href="{{url('reviews')}}"> <img src="{{url('img/heavy_reviews.jpeg')}}" alt="" class="menu-img" width="60%" height="200px"></a>
-        <p class="span-title mt-2">Reviews</p>
+     
+      
+    </div> 
+      <div class="col mt-3">
+        <a href="{{url('reviews')}}"><img src="{{url('img/satanism.png')}}" alt="" class="menu-img btn-outline-light" title="Reviews" width="50%"></a>
+        
       </div>
       
     </div>

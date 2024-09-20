@@ -125,11 +125,11 @@
               <a class="nav-body mx-2 text-decoration-none" aria-current="page" href="/">Home</a>
             </li>
             <li class="nav-item mx-2">
-              <a class="nav-body text-decoration-none" href="{{url('aboutUs')}}">About Us</a>
+              <a class="nav-body text-decoration-none" href="#">About Us</a>
             </li>
 
             <li class="nav-item mx-2">
-              <a class="nav-body text-decoration-none" href="{{url('contact')}}">Contact</a>
+              <a class="nav-body text-decoration-none" href="#">Contact Us</a>
             </li>
           </ul>
           <!-- Login and Sing up -->
@@ -141,10 +141,7 @@
             @else
             <a href="{{ route('login') }}" class="text-black text-decoration-none">Log in</a>
 
-            @if (Route::has('register'))
-            <a href="{{ route('register') }}"
-              class="text-white text-decoration-none px-3 py-1 btn btn-primary rounded-4">Register</a>
-            @endif
+           
             @endauth
 
             @endif

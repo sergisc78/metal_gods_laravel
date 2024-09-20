@@ -3,8 +3,8 @@
 
 <div class="container review-card" id="allbands">
 
-  <a href="{{url('user/reviews')}}" class="btn  btn-primary mt-3 mb-4 form-button">Reviews</a>
-  <a href="{{url('user/dashboard')}}" class="btn  btn-primary mt-3 mb-4 form-button">Dashboard</a>
+  <a href="{{url('user/reviews')}}" title="Reviews" class="btn  btn-outline-light mt-3 mb-4 form-button"><img src="{{url('img/metal-guitar.png')}}" width="50px" height="20px"  alt="dashboard_icon"></a>
+  <a href="{{url('user/dashboard')}}" title="Dashboard" class="btn  btn-outline-light mt-3 mb-4 form-button"><img src="{{url('img/home.png')}}" width="50px" height="20px"  alt="dashboard_icon"></a>
 
 
 

@@ -145,4 +145,19 @@ class MetalGodsController extends Controller
 
         return redirect()->back()->with('message', 'Your message has been sent successfully');
     }
+
+
+    //ABOUT US
+
+    public static function getAboutUs(){
+
+        return view ('aboutUs');
+    }
+
+    //CONTACT
+
+    public static function getContact(){
+
+        return view('contact');
+    }
 }

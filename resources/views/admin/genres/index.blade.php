@@ -2,9 +2,8 @@
 
 <div class="container" id="allbands">
 
-  <a href="{{url('admin/genres/add-genre')}}" class="btn  btn-primary mt-3 mb-4 form-link">Add genre</a>
-  <a href="{{url('admin/dashboard')}}" class="btn  btn-primary mt-3 mb-4 form-link">Dashboard</a>
-
+  <a href="{{url('admin/genres/add-genre')}}" title="Add genre" class="btn  btn-outline-light mt-3 mb-4 form-link"><img src="{{url('img/pentagram.png')}}" width="40px" height="30px" alt="add_icon"></a>
+  <a href="{{url('admin/dashboard')}}" title="Dashboard" class="btn  btn-outline-light mt-3 mb-4 form-button"><img src="{{url('img/home.png')}}" width="40px" height="30px"  alt="dashboard_icon"></a>
   <div class="row">
 
     <div class="col-lg-12">
@@ -29,7 +28,7 @@
             {{--EDIT GENRE--}}
             <td>
               <div class="text-center">
-                <a class="btn btn-info edit form-button-index" href="{{url('/admin/genres/edit-genre/'.$genres->id)}}">EDIT</a>
+                <a class="btn btn-outline-light edit form-button-index" title="Edit genre" href="{{url('/admin/genres/edit-genre/'.$genres->id)}}"><img src="{{url('img/demon_edit.png')}}" height="50px" width="50px" alt="demon_edit_icon"></a>
               </div>
             </td>
 
@@ -37,7 +36,7 @@
             {{--DELETE GENRE --}}
             <td>
               <div class="text-center">
-                <button class="btn btn-danger delete form-button-index" data-id={{'/admin/genres/'.$genres->id}}>DELETE</button>
+                <button class="btn btn-outline-light delete form-button-index" title="Delete genre" data-id={{'/admin/genres/'.$genres->id}}><img src="{{url('img/devil_delete.png')}}" width="50px" height="40px" alt="devil_delete_icon"></button>
               </div>
             </td>
 

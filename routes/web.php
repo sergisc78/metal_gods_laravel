@@ -107,6 +107,9 @@ Route::get('/bands/discography/{id}/{band}',[MetalGodsController::class,'getBand
 Route::get('/bands/discography/album/{band}/{album}',[MetalGodsController::class,'getAlbumByTitle']);
 Route::get('/bands/discography/review/{id}/{album}',[MetalGodsController::class,'getReviewsById']);
 Route::get('/report-an-error',[MetalGodsController::class,'sendErrorForm']);
-Route::post('/report-an-error',[MetalGodsController::class,'sendError']);                   
+Route::post('/report-an-error',[MetalGodsController::class,'sendError']); 
+Route::get('/aboutUs',[MetalGodsController::class,'getAboutUs']);
+Route::get('/contact',[MetalGodsController::class,'getContact']); 
+                 
 
 require __DIR__.'/auth.php';

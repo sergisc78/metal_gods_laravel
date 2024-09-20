@@ -2,9 +2,9 @@
 
 <div class="container" id="allbands">
 
-  <a href="{{url('user/bands/add-band')}}" class="btn  btn-primary mt-3 mb-4 form-button">Add band</a>
-  <a href="{{url('user/dashboard')}}" class="btn  btn-primary mt-3 mb-4 form-button">Dashboard</a>
-  <a href="{{url('user/report-an-error')}}" class="btn  btn-danger mt-3 mb-4 form-button" title="Contact us if you have seen a mistake in any section">Report an error</a>
+  <a href="{{url('user/bands/add-band')}}" class="btn  btn-outline-light mt-3 mb-4 form-button" title="Add band"><img src="{{url('img/pentagram.png')}}" width="40px" height="30px" alt="add_icon"></a>
+  <a href="{{url('user/dashboard')}}" class="btn  btn-outline-light mt-3 mb-4 form-button" title="Dashboard"><img src="{{url('img/home.png')}}" width="40px" height="30px"  alt="dashboard_icon"></a>
+  <a href="{{url('user/report-an-error')}}" class="btn  btn-danger mt-3 mb-4 form-button" title="Contact us if you have seen a mistake in any section"><img src="{{url('img/charlar.png')}}" width="40px" height="30px" alt="charlar_icon"></a>
  
   <div class="row">
 

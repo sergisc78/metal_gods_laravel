@@ -3,7 +3,7 @@
 <div class="container" id="allbands">
 
 
-  <a href="{{url('admin/dashboard')}}" class="btn  btn-primary mt-3 mb-4 form-button">Dashboard</a>
+  <a href="{{url('admin/dashboard')}}" class="btn btn-outline-light mt-3 mb-4 form-button" title="dashboard"><img src="{{url('img/home.png')}}" width="40px" height="30px" alt="dashboard_home"></a>
 
   <div class="row">
 
@@ -35,7 +35,7 @@
             {{--EDIT USER ROLE--}}
             <td>
               <div class="text-center">
-                <a class="btn btn-info edit" href="{{url('/admin/users/edit-role/'.$users->id)}}">EDIT</a>
+                <a class="btn btn-outline-light edit" href="{{url('/admin/users/edit-role/'.$users->id)}}"  title="Edit user role"><img src="{{url('img/demon_edit.png')}}" width="50px" height="40px" alt="demon_edit_icon"></a>
               </div>
             </td>
 
@@ -43,7 +43,7 @@
             {{--DELETE USER --}}
             <td>
               <div class="text-center">
-                <button class="btn btn-danger delete" data-id={{'/admin/users/'.$users->id}}>DELETE</button>
+                <button class="btn btn-otline-light delete" data-id={{'/admin/users/'.$users->id}} title="Delete user"><img src="{{url('img/devil_delete.png')}}" width="50px" height="40px" alt="devil_delete_icon"></button>
               </div>
             </td>
 
@@ -70,7 +70,9 @@
     <!-- DATATABLES SCRIPT-->
     <script>
       $(document).ready(function () {
-          $('#table').DataTable();
+          $('#table').DataTable({
+            "order": [[4, 'desc']],
+          });
 });
     </script>
 

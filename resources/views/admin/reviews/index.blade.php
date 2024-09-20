@@ -2,8 +2,8 @@
 
 <div class="container" id="allbands">
 
-  <a href="{{url('admin/reviews/add-review/')}}" class="btn  btn-primary mt-3 mb-4 form-button">Add review</a>
-  <a href="{{url('admin/dashboard')}}" class="btn  btn-primary mt-3 mb-4 form-button">Dashboard</a>
+  <a href="{{url('admin/reviews/add-review/')}}" title="Add review" class="btn  btn-oultine-light mt-3 mb-4 form-button"><img src="{{url('img/pentagram.png')}}" width="40px" height="30px" alt="add_icon"></a>
+  <a href="{{url('admin/dashboard')}}" title="Dashboard" class="btn  btn-outline-light mt-3 mb-4 form-button"><img src="{{url('img/home.png')}}" width="40px" height="30px"  alt="dashboard_icon"></a>
 
   <div class="row">
 
@@ -37,7 +37,7 @@
             {{--EDIT REVIEW--}}
             <td>
               <div class="text-center">
-                <a class="btn btn-info edit" href="{{url('/admin/reviews/view-edit-review/'.$reviews->id)}}">VIEW</a>
+                <a class="btn btn-outline-light edit" href="{{url('/admin/reviews/view-edit-review/'.$reviews->id)}}" title="View / Edit Review"><img src="{{url('img/demon_edit.png')}}" width="50px" height="40px" alt="demon_edit_icon"></a>
               </div>
             </td>
 
@@ -45,7 +45,7 @@
             {{--DELETE REVIEW --}}
             <td>
               <div class="text-center">
-                <button class="btn btn-danger delete" data-id={{'/admin/reviews/'.$reviews->id}}>DELETE</button>
+                <button class="btn btn-outline-light  delete" data-id={{'/admin/reviews/'.$reviews->id}} title="Delete review"><img src="{{url('img/devil_delete.png')}}" width="50px" height="40px" alt="devil_delete_icon"></button>
               </div>
             </td>
 
@@ -72,7 +72,9 @@
     <!-- DATATABLES SCRIPT-->
     <script>
       $(document).ready(function () {
-          $('#table').DataTable();
+          $('#table').DataTable({
+            "order": [[2, 'desc']]
+          });
 });
     </script>
 

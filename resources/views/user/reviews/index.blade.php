@@ -2,10 +2,10 @@
 
 <div class="container" id="allbands">
 
-  <a href="{{url('user/reviews/add-review')}}" class="btn  btn-primary mt-3 mb-4 form-button">Add review</a>
-  <a href="{{url('user/reviews/your-reviews')}}" class="btn  btn-primary mt-3 mb-4 form-button">Your reviews</a>
-  <a href="{{url('user/dashboard')}}" class="btn  btn-primary mt-3 mb-4 form-button">Dashboard</a>
-  <a href="{{url('user/report-an-error')}}" class="btn  btn-danger mt-3 mb-4 form-button" title="Contact us if you have seen a mistake in any section">Report an error</a>
+  <a href="{{url('user/reviews/add-review')}}" title="Add review" class="btn  btn-outline-light mt-3 mb-4 form-button"><img src="{{url('img/pentagram.png')}}" width="40px" height="30px" alt="add_icon"></a>
+  <a href="{{url('user/reviews/your-reviews')}}" title="Your reviews" class="btn  btn-outline-light mt-3 mb-4 form-button"><img src="{{url('img/heavy-metal.png')}}" width="40px" height="30px" alt="your_reviews_icon"></a>
+  <a href="{{url('user/dashboard')}}" title="Dashboard" class="btn  btn-outline-light mt-3 mb-4 form-button"><img src="{{url('img/home.png')}}" width="40px" height="30px"  alt="dashboard_icon"></a>
+  <a href="{{url('user/report-an-error')}}" class="btn btn-danger mt-3 mb-4 form-button" title="Contact us if you have seen a mistake in any section"><img src="{{url('img/charlar.png')}}" width="40px" height="30px" alt="charlar_icon"></a>
 
   <div class="row">
 
@@ -33,8 +33,8 @@
             {{--VIEW REVIEW--}}
             <td>
               <div class="text-center">
-                <a class="btn btn-info edit"
-                  href="{{url('/user/reviews/view_review/'.$reviews->id.'/'.$reviews->band_name.'/'.$reviews->album_title)}}">VIEW</a>
+                <a class="btn btn-outline-light edit" title="View review"
+                  href="{{url('/user/reviews/view_review/'.$reviews->id.'/'.$reviews->band_name.'/'.$reviews->album_title)}}"><img src="{{url('img/demon_edit.png')}}" width="50px" height="20px" alt="demon_edit_icon"></a>
               </div>
             </td>
 
@@ -62,7 +62,9 @@
     <!-- DATATABLES SCRIPT-->
     <script>
       $(document).ready(function () {
-          $('#table').DataTable();
+          $('#table').DataTable({
+            "order":[2,'desc']
+          });
 });
     </script>
 

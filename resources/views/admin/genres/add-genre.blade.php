@@ -25,7 +25,7 @@
         <hr class="mt-4 border border-dark " style="color: black">
         <div class="text-center">
           <a href="{{url('admin/genres')}}"
-            class="btn btn-primary back-cats w-50 mx-auto mt-3 mb-3 form-back">Genres</a>
+            class="btn btn-primary back-cats w-50 mx-auto mt-3 mb-3 form-back" title="Back">Genres</a>
         </div>
         <form action="{{url('admin/addGenre')}}" method="post" enctype="multipart/form-data">
           @csrf
